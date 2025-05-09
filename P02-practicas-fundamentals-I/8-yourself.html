@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My JavaScript Contact</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 8px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>First Javascript contact</h1>
+  <p id="p">This is the initial text.</p>
+
+  <button id="hello">Hello World</button>
+  <button id="bye">Goodbye World</button>
+  <button id = "bold">Bold</button>
+  <button id ="italic">Italic</button>
+  <button id="color">Change Color</button>
+
+  <script>
+      // A button that, when clicked, changes the text of the paragraph <p> to "Hello World".
+        const helloButton = document.getElementById("hello");
+        const pharagraph = document.getElementById("p");
+        helloButton.addEventListener("click", function(){
+          pharagraph.textContent = "Hello World";
+        });
+      // A button that, when clicked, changes the text of the paragraph < p > to "Goodbye World".
+        const byeButton = document.getElementById("bye");
+        byeButton.addEventListener("click", function(){
+          pharagraph.textContent = "Goodbye World";
+        });
+      // A button that, when clicked, change the text style to bold.
+      const boldButton = document.getElementById("bold");
+      boldButton.addEventListener("click", function(){
+      pharagraph.style.fontWeight = "bold";
+      });
+      // A button that, when clicked, change the text style to italic.
+      const italicButton = document.getElementById("italic");
+      italicButton.addEventListener("click", function(){
+      pharagraph.style.fontStyle = "italic";
+      });
+      // A button that, when clicked, change the color of the text to red, when it is clicked again set the color back to the initial color.
+      const colorButton = document.getElementById("color");
+      colorButton.addEventListener("click", function(){
+      pharagraph.style.color = "red";
+      
+      if(pharagraph.style.color == "red"){
+        pharagraph.style.color = "black";
+      } 
+      
+      });
+  </script>
+
+</body>
+
+</html>

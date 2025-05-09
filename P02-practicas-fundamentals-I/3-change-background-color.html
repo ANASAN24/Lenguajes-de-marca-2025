@@ -1,0 +1,36 @@
+<h1 id="Colorh1">Welcome back background</h1>
+<button id="colorButton">Change Color</button>
+<div id="colorDiv" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+<button id="ChangeBG">Changes BG Color</button>
+<button id="Changesh1">h1 Color</button>
+<script>
+  const button = document.getElementById("colorButton");
+  const div = document.getElementById("colorDiv");
+  const button2 = document.getElementById("ChangeBG");
+  const button3 = document.getElementById("Changesh1");
+  const h1 = document.getElementById("Colorh1")
+
+  button.addEventListener("click", function () {
+    div.style.backgroundColor = "red";
+  });
+
+  button2.addEventListener("click", function(){
+    div.style.backgroundColor = "lightblue";
+  });
+
+  button3.addEventListener("click", function(){
+    //AQUI SE HACE CON EL IF PARA LUEGO
+    if(div.style.backgroundColor == "red"){
+      h1.style.color = "blue";
+    } else{
+      h1.style.color = "black"
+    }
+  })
+
+  // TO DO: 
+  // 1. Create a second button that changes the backgroundColor back
+  // to lightblue or another color of your choice when clicked.
+
+  // 2. Create a third button that changes the color of the h1 to blue when the background is red.
+
+</script>

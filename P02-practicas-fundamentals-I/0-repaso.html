@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <!--Add elelemt to header-->
+    <style>
+      .example{
+        color:blueviolet;
+      }
+      #p_example{
+        background-color: lightblue;
+        font-family: 'Courier New';
+      }
+    </style>
+  </head>
+  <body>
+    <!--Add element to body-->
+    <h1 class="example">
+      Example text
+    </h1>
+    <h1 id="h1_dam" class="example">
+      1ºDAM
+    </h1>
+    <p id="p_example">dadasdasdasd</p>
+
+    <button id="b_change_color">Change violet to green</button>
+
+    <script>
+      //Use of variables (se usan esas 3 formas ahora da igual cual sea)
+       
+      let nombreVariable = "LDM"
+      var course = "1º";
+      const student = "Name"
+  
+      console.log("console");
+      //alert(nombreVariable);
+      //confirm(course);
+      //punto 1 y 2
+
+      var pElement = document.getElementById("p_example");
+      console.log(pElement);
+      pElement.innerHTML = "<b>New text </b>";
+
+      var h1Element = document.getElementsByClassName("example");
+
+      for(i = 0; i< h1Element.length; i++){
+        h1Element[i].textContent = "same name "+i;
+      }
+     // h1Element[0].textContent = "same name";
+    //  h1Element[1].textContent = "same name 1";
+
+    var bElement = document.getElementById("b_change_color");
+    var h1DamnElement = document.getElementById("h1_dam");
+    bElement.addEventListener("click", function(){
+      //BLACK BOX
+      h1DamnElement.style.color = "green";
+      pElement.style.backgroundColor = "yellow";
+    });
+
+    </script>
+
+  </body>
+  
+</html>
+
