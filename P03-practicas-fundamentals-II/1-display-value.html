@@ -1,0 +1,25 @@
+<input type="text" id="myInput" placeholder="Enter text here">
+<button id="showValueButton">Show Value</button>
+<button id="button2">Show Value in h1</button>
+<h1 id="inputValue"></h1>
+<p id="inputValue2"></p>
+<script>
+  const input = document.getElementById("myInput");
+  const button = document.getElementById("showValueButton");
+  const display = document.getElementById("inputValue");
+
+  const display2 = document.getElementById("inputValue2");
+  const button2= document.getElementById("button2");
+
+  button.addEventListener("click", function () {
+    display.textContent = input.value;
+  });
+
+  button2.addEventListener("click", function(){
+    display2.textContent = input.value;
+  })
+
+  //TODO: Add a second button to display the input value in a h1 elements
+
+
+</script>
