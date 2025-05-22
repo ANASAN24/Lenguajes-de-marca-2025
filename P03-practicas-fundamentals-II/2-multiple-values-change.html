@@ -3,29 +3,32 @@
 <p class="changeable">Paragraph 2</p>
 <p class="changeable">Paragraph 3</p>
 
-<ul id="List"></ul>
+<!-- create an empty unordered list  -->
+<ul id="List">
+</ul>
 
 <script>
   const button = document.getElementById("changeAllButton");
   const paragraphs = document.getElementsByClassName("changeable");
 
+  //Create the java element using the ul ID
   const list = document.getElementById("List");
 
   button.addEventListener("click", function () {
     for (let i = 0; i < paragraphs.length; i++) {
       paragraphs[i].textContent = "Changed!";
-      list[i].textContent = "Changed!";
-    }
 
-    for (let i = 0; i < list.length; i++) {
-      list[i].textContent = "Changed!";
+      //Create a li element in the for loop
+      var lista = document.createElement("li");
+      lista.textContent = "Changed! " + i;
+
+      //Add li element to ul
+      list.appendChild(lista);
     }
   });
 
 
   //TODO: Display the changed text in an unordered list <ul>
-
-    //NO SE HACERLO
 
 
 </script>
