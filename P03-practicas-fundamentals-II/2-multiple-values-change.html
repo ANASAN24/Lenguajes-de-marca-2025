@@ -1,9 +1,9 @@
 <button id="changeAllButton">Change All</button>
-<ul id="List">
-  <p class="changeable">Paragraph 1</p>
-  <p class="changeable">Paragraph 2</p>
-  <p class="changeable">Paragraph 3</p>
-</ul>
+<p class="changeable">Paragraph 1</p>
+<p class="changeable">Paragraph 2</p>
+<p class="changeable">Paragraph 3</p>
+
+<ul id="List"></ul>
 
 <script>
   const button = document.getElementById("changeAllButton");
@@ -14,17 +14,19 @@
   button.addEventListener("click", function () {
     for (let i = 0; i < paragraphs.length; i++) {
       paragraphs[i].textContent = "Changed!";
+      list[i].textContent = "Changed!";
     }
 
     for (let i = 0; i < list.length; i++) {
       list[i].textContent = "Changed!";
     }
-   
   });
 
 
   //TODO: Display the changed text in an unordered list <ul>
 
-//NO LO HE CONSEGUIDO HACER :(
+    //NO SE HACERLO
+
+
 </script>
 

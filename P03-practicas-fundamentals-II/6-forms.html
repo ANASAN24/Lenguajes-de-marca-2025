@@ -26,11 +26,11 @@
     <input type="password" id="confirmPassword">
     <span id="errorConfirmPassword"></span>
 
-    <button type="submit">Registrarse</button>
-    <p>Nombre</p>
-    <p>Email</p>
-    <p>Contraseña</p>
-    <p>Confirmar Contraseña:</p>
+    <button type="submit" id="button">Registrarse</button>
+    <p id="texto1">Nombre</p>
+    <p id="texto2">Email</p>
+    <p id="texto3">Contraseña</p>
+    <p id="texto4">Confirmar Contraseña:</p>
   </form>
 
   <script>
@@ -40,36 +40,56 @@
       const email = document.getElementById("email");
       const password = document.getElementById("password");
       const confirmPassword = document.getElementById("confirmPassword");
+      const button = document.getElementById("button");
 
-      valido = true;
+    const texto1 = document.getElementById("texto1")
+    const texto2 = document.getElementById("texto2");
+    const texto3 = document.getElementById("texto3");
+    const texto4 = document.getElementById("texto4");
 
-      // Validaciones
-      if (nombre === "") {
-        document.getElementById("errorNombre").textContent = "El nombre es obligatorio.";
-        valido = false;
-      }
-      if (email === "") {
-        document.getElementById("errorEmail").textContent = "El email es obligatorio.";
-        valido = false;
-      }
-      if (password === "") {
-        document.getElementById("errorPassword").textContent = "La contraseña es obligatoria.";
-        valido = false;
-      }
-      if (password !== confirmPassword) {
-        document.getElementById("errorConfirmPassword").textContent = "Las contraseñas no coinciden.";
-        valido = false;
-      }
+    const errorNombre = document.getElementById("errorNombre");
+    const errorEmail = document.getElementById("errorEmail");
+    const errorPassword = document.getElementById("errorPassword");
+    const errorConfirmPassword = document.getElementById("errorConfirmPassword");
 
-         if (valido) {
-        document.getElementById("pNombre").textContent = "Nombre: " + nombre;
-        document.getElementById("pEmail").textContent = "Email: " + email;
-        document.getElementById("pPassword").textContent = "Contraseña: " + password;
-        document.getElementById("pConfirmPassword").textContent = "Confirmar Contraseña: " + confirmPassword;
-      }
+
+
     //TODO: When the button Registrarse is clicked, it should display all the input value in their respective <p> tag
+      button.addEventListener("click", function () {
+        event.preventDefault(); // <-- Esto evita que se recargue la página
+        texto1.textContent = nombre.value;
+        texto2.textContent = email.value;
+        texto3.textContent = password.value;
+        texto4.textContent = confirmPassword.value;
+
+        if (nombre.value.trim() === "") {
+        errorNombre.textContent = "El nombre es obligatorio.";
+       
+      }
+
+      if (email.value.trim() === "") {
+        errorEmail.textContent = "El email es obligatorio.";
+        
+      }
+
+      if (password.value.trim() === "") {
+        errorPassword.textContent = "La contraseña es obligatoria.";
+       
+      }
+
+      if (confirmPassword.value.trim() === "") {
+        errorConfirmPassword.textContent = "Confirma tu contraseña.";
+       
+      } else if (password.value !== confirmPassword.value) {
+        errorConfirmPassword.textContent = "Las contraseñas no coinciden.";
+        
+      }
+
+      });
     // Add also a validation for the form, if the name is empty, show an error message in the <span> tag with id="errorNombre"
     // If the email is empty, show an error message in the <span> tag with id="errorEmail"
     // If the password is empty, show an error message in the <span> tag with id="errorPassword"
     // If the password and confirm password are not the same, show an error message in the <span> tag with id="errorConfirmPassword"
+
+      
   </script>
