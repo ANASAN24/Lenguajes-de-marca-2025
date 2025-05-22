@@ -57,21 +57,23 @@
     //TODO: When the button Registrarse is clicked, it should display all the input value in their respective <p> tag
       button.addEventListener("click", function () {
         event.preventDefault(); // <-- Esto evita que se recargue la página
-        texto1.textContent = nombre.value;
-        texto2.textContent = email.value;
-        texto3.textContent = password.value;
-        texto4.textContent = confirmPassword.value;
+        texto1.textContent = "Nombre: " + nombre.value;
+        texto2.textContent = "Email: " + email.value;
+        texto3.textContent = "Contraseña: " + password.value;
+        texto4.textContent = "Confirmar contraseña: " + confirmPassword.value; //concatenar x + y
+
+    // Add also a validation for the form, if the name is empty, show an error message in the <span> tag with id="errorNombre"
 
         if (nombre.value.trim() === "") {
         errorNombre.textContent = "El nombre es obligatorio.";
        
       }
-
+  // If the email is empty, show an error message in the <span> tag with id="errorEmail"
       if (email.value.trim() === "") {
         errorEmail.textContent = "El email es obligatorio.";
         
       }
-
+  // If the password is empty, show an error message in the <span> tag with id="errorPassword"
       if (password.value.trim() === "") {
         errorPassword.textContent = "La contraseña es obligatoria.";
        
@@ -79,17 +81,17 @@
 
       if (confirmPassword.value.trim() === "") {
         errorConfirmPassword.textContent = "Confirma tu contraseña.";
-       
+   // If the password and confirm password are not the same, show an error message in the <span> tag with id="errorConfirmPassword"
       } else if (password.value !== confirmPassword.value) {
         errorConfirmPassword.textContent = "Las contraseñas no coinciden.";
         
       }
 
       });
-    // Add also a validation for the form, if the name is empty, show an error message in the <span> tag with id="errorNombre"
-    // If the email is empty, show an error message in the <span> tag with id="errorEmail"
-    // If the password is empty, show an error message in the <span> tag with id="errorPassword"
-    // If the password and confirm password are not the same, show an error message in the <span> tag with id="errorConfirmPassword"
+    
+   
+  
+   
 
       
   </script>
